@@ -28,7 +28,8 @@ sleep 3
 make install
 echo -e "\033[31m-----openssl make install complete----- \033[0m"
 sleep 3
-ln -s /usr/local/bin/openssl /usr/bin/openssl
+echo "/usr/local/lib64/" >> /etc/ld.so.conf
+ldconfig
 rm -rf /opt/openssl-3.0.5/
 echo -e "\033[31m-----openssl install data delete----- \033[0m"
 echo -e "\033[31m-----$(openssl version)---- \033[0m"
